@@ -3,7 +3,7 @@ const login = require("facebook-chat-api");
 const fetch = require("node-fetch");
 const convertTime = require('convert-time');
 const WolframAlphaAPI = require('wolfram-alpha-api');
-const waApi = WolframAlphaAPI('ULEK94-KQ88P7RYQW');
+const waApi = WolframAlphaAPI('XXX'); // replace with your WA APP ID
 const sApi = require('synergia-api');
 
 
@@ -25,7 +25,7 @@ login({
             case "message":
                 switch (event.body.replace(/ .*/, '')) {
                     case prefix + 'stop':
-                        if (event.senderID === '100003045345838') {
+                        if (event.senderID === 'XXX') { //replace with your own ID
                             api.sendMessage("Wyłączanie...", event.threadID);
                             return stopListening();
                         } else {
@@ -34,7 +34,7 @@ login({
                                 body: 'Osoby z uprawnieniami: @Administrator',
                                 mentions: [{
                                     tag: '@Administrator',
-                                    id: '100003045345838',
+                                    id: 'XXX', //replace with your own ID
                                     fromIndex: 9,
                                 }],
                             }, event.threadID);
@@ -52,7 +52,7 @@ login({
 
 
                     case prefix + 'email':
-                        api.sendMessage("Login: ckziu.1b5t@wp.pl\nHasło: fsdtgtyb", event.threadID);
+                        api.sendMessage("Login: XXX\nHasło: XXX", event.threadID); //replace with your class email and password
                         break;
 
 
@@ -105,7 +105,7 @@ login({
                                     method: "GET",
                                     headers: {
                                         'Cache-Control': 'no-cache',
-                                        'Authorization': 'Bearer 3ZHXX1t4jTPi3Nm4049qlWCV85rLvIy5qu7MAJcvlKfOm6/XtP1Fk4aYQodXM/J9WUqikPpGz0s3ztDjFasjNbXgJNF6qeTJySq5Bqx/nwXOMXX7m9jNe6grd6iXUFzJFYK1jb5QfkSTb10gfVHB3ExiFCz6JEQGFNen3ALSu+s4Y5I0V25X2SMYzmJPgKiM=#5BU3yZTb2X0='
+                                        'Authorization': 'XXX' //replace with your own Librus Synergia authorization
                                     }
                                 })
                                 .then(function (response) {
@@ -158,7 +158,7 @@ login({
                         var itemsProcessed = 0;
                         requests.forEach(request => {
                             fetch("https://maps.googleapis.com/maps/api/directions/json?mode=transit&transit_mode=bus&origin=place_id:ChIJ0TD_LYPDFkcRfIM-eNXknE8&destination=place_id:" +
-                                    request + "&key=AIzaSyCgwRjyNDF58zDNlekngK_Q32nphxAaYeI")
+                                    request + "&key=XXX") //replace with your own Google Directions API Key
                                 .then(function (response) {
                                     return response.json();
                                 })
