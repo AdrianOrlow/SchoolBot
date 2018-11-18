@@ -1,15 +1,16 @@
 {
   "name": "schoolbot",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "Simple Facebook Messenger bot for school classes",
   "main": "src/index.js",
   "scripts": {
-    "dev": "node src/index.js",
+    "dev": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adrian Orłów",
   "license": "MIT",
   "dependencies": {
+    "mysql": "^2.16.0",
     "synergia-api": "^1.0.0"
   }
 }

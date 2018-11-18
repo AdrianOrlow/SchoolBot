@@ -8,9 +8,9 @@ npm-debug.log*
 
 node_modules/
 
-login/
-login.js
+credentials.txt
 appstate.json
+serviceAccountKey.json
 
 *~
 *.swp
